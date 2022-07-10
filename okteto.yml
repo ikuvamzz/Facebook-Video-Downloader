@@ -1,5 +1,4 @@
 name: facebook-video-downloader
-image: okteto/facebook-video-downloader
 workdir: /
 command:
 - bash
