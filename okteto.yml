@@ -1,6 +1,6 @@
-name: ikuvamzz
-image: okteto/ikuvamzz
-workdir: /ikuvamzz
+name: facebook-video-downloader
+image: okteto/facebook-video-downloader
+workdir: /
 command:
 - bash
 forward:
