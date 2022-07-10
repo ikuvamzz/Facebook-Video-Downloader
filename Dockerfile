@@ -1,10 +1,11 @@
-FROM node:14 AS dev
+FROM okteto/node:10 as dev
+WORKDIR /okteto
+RUN npm install -g @11ty/eleventy
 
-WORKDIR /
+FROM dev as build
+# COPY my-parrots .
+# generate the website in _site
+RUN eleventy --formats=liquid,html,jpg,gif
 
-RUN yarn install
-RUN yarn build
-
-FROM nginx:alpine
-COPY --from=dev /src/dist /usr/share/nginx/html
-EXPOSE 80
+FROM bitnami/nginx as website
+COPY --from=build /okteto/_site /app
