@@ -1,0 +1,20 @@
+build:
+  frontend:
+    image: okteto.dev/frontend
+    context: .
+  
+  frontend-dev:
+    image: okteto.dev/frontend-dev
+    context: .
+    target: dev
+
+deploy:
+  - name: Deploy Frontend
+    command: helm upgrade --install Facebook-Video-Downloader chart --set image=${OKTETO_BUILD_FRONTEND_IMAGE}
+
+dev:
+  frontend:
+    image: ${OKTETO_BUILD_FRONTEND_DEV_IMAGE}
+    command: yarn start
+    sync:
+    - .:/
