@@ -1,5 +1,5 @@
 FROM okteto/node:10 as dev
-WORKDIR /okteto
+WORKDIR /
 RUN npm install -g @11ty/eleventy
 
 FROM dev as build
