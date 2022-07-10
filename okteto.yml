@@ -1,4 +1,3 @@
-name: facebook-video-downloader
 workdir: /
 command:
 - bash
