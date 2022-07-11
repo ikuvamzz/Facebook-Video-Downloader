@@ -1,8 +1,6 @@
 services:
   web:
-    image: img-static-site-example
+    image: .
     build: .
-    container_name: my-static-site
-    restart: always
     ports:
       - "8080:80"
