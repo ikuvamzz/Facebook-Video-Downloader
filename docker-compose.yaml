@@ -1,6 +1,5 @@
-services:
-  web:
-    image: .
-    build: .
-    ports:
-      - "8080:80"
+nginx:   
+  image: nginx:latest  
+  container_name: nginx-container  
+  ports:   
+    - 80:80
